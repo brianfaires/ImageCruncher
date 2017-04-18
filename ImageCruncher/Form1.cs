@@ -16,7 +16,7 @@ namespace ImageCruncher
     {
         string outputDirPrefix = ConfigurationManager.AppSettings.Get("outputDirPrefix");
         string fileFormatSuffix = ConfigurationManager.AppSettings.Get("fileExtension");
-        string[] validInputFormats = { ".jpg", ".bmp" };
+        string[] validInputFormats = { ".jpg", ".bmp", ".png" };
 
         public Form1()
         {
@@ -84,6 +84,10 @@ namespace ImageCruncher
                 MessageBox.Show("Exception: " + ex.Message);
             }
         }
+
+        //
+        // The real logic is here. My custom format is defined by the logic in CrunchImage() and UncrunchImage().
+        //
 
         // Current file format:
         //  bytes[0:1] = Image height
